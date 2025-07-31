@@ -123,19 +123,55 @@
     </div>
   </section>
 
-  <section> 
-    <h2>Contáctanos</h2>
-    <form>
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo electrónico" required>
-      <textarea rows="5" placeholder="Cuéntanos sobre tu propiedad..." required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+<section> 
+  <h2>Contáctanos</h2>
+  <form id="contact-form" action="https://formspree.io/f/mnqekgyr" method="POST">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <textarea name="mensaje" rows="5" placeholder="Cuéntanos sobre tu propiedad..." required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
 
-  <footer>
-    <p>&copy; 2025 You Home - Administración Airbnb en Puerto Rico. Todos los derechos reservados.</p>
-  </footer>
+  <div id="thank-you-message" style="display:none; margin-top: 20px; color: green;">
+    ¡Gracias por contactarnos! Te responderemos pronto.
+  </div>
 
-</body>
-</html>
+  <div class="contact-info" style="margin-top: 30px;">
+    <p><strong>Correo electrónico:</strong> <a href="mailto:youhomeinfo.pr@gmail.com">youhomeinfo.pr@gmail.com</a></p>
+    <p><strong>Teléfono:</strong> <a href="tel:+19394014259">939-401-4259</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 You Home - Administración Airbnb en Puerto Rico. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const thankYou = document.getElementById('thank-you-message');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault(); // evita recargar la página
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        thankYou.style.display = 'block';
+      } else {
+        alert('Hubo un error. Intenta de nuevo más tarde.');
+      }
+    } catch (error) {
+      alert('Error de conexión. Intenta nuevamente.');
+    }
+  });
+</script>
