@@ -134,7 +134,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 You Home - Administración Airbnb en Puerto Rico. Todos los derechos reservados.</p>
+    2025 You Home - Administración Airbnb en Puerto Rico. Todos los derechos reservados.</p>
   </footer>
 
 </body>
