@@ -123,7 +123,7 @@
     </div>
   </section>
 
-  <section>
+  <section> 
     <h2>Contáctanos</h2>
     <form>
       <input type="text" placeholder="Nombre" required>
@@ -134,7 +134,7 @@
   </section>
 
   <footer>
-    2025 You Home - Administración Airbnb en Puerto Rico. Todos los derechos reservados.</p>
+    <p>&copy; 2025 You Home - Administración Airbnb en Puerto Rico. Todos los derechos reservados.</p>
   </footer>
 
 </body>
