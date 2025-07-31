@@ -29,6 +29,11 @@
       margin-top: 10px;
     }
 
+    header img {
+      max-width: 250px;
+      margin-bottom: 20px;
+    }
+
     section {
       padding: 60px 20px;
       max-width: 1000px;
@@ -43,7 +48,7 @@
     }
 
     .service {
-      flex: 1 1 30%;
+      flex: 1 1 45%;
       background: #fff;
       padding: 20px;
       border-radius: 10px;
@@ -89,6 +94,19 @@
       background-color: #cf634c;
     }
 
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #thank-you-message {
+      display: none;
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+
     footer {
       background-color: #8C4B2F;
       color: white;
@@ -101,6 +119,7 @@
 <body>
 
   <header>
+    <img src="ChatGPT Image Jul 13, 2025, 07_49_22 AM.png" alt="Logo You Home">
     <h1>You Home</h1>
     <p>Administración profesional de propiedades tipo Airbnb en Puerto Rico</p>
   </header>
@@ -109,59 +128,26 @@
     <h2>Servicios</h2>
     <div class="services">
       <div class="service">
-        <h3>Gestión de Reservas</h3>
-        <p>Respondemos a tus huéspedes, gestionamos el calendario y maximizamos tu ocupación para asegurar ingresos consistentes.</p>
+        <h3>Marketing y Gestión de Reservas</h3>
+        <p>Perfiles optimizados en Airbnb, Booking y Vrbo. Precios dinámicos y campañas digitales para maximizar visibilidad y ocupación.</p>
+      </div>
+      <div class="service">
+        <h3>Atención al Cliente 24/7</h3>
+        <p>Respuesta rápida en inglés y español. Apoyo continuo ante consultas, emergencias y recomendaciones locales.</p>
+      </div>
+      <div class="service">
+        <h3>Check-in / Check-out y Guías Locales</h3>
+        <p>Auto check-in/out y manuales digitales con recomendaciones de playas, restaurantes y actividades.</p>
       </div>
       <div class="service">
         <h3>Limpieza y Mantenimiento</h3>
-        <p>Coordinamos limpieza profesional después de cada estadía y atendemos cualquier imprevisto técnico.</p>
-      </div>
-      <div class="service">
-        <h3>Optimización del Perfil</h3>
-        <p>Fotografías profesionales, descripciones atractivas y precios estratégicos para destacarte entre la competencia.</p>
+        <p>Limpieza estandarizada tras cada salida. Cambio de ropa de cama, ambientadores, reposición de insumos y reportes de daños.</p>
       </div>
     </div>
   </section>
 
-<section> 
-  <h2>Contáctanos</h2>
- <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Contáctanos - You Home</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    input, textarea, button {
-      display: block;
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 15px;
-      padding: 10px;
-      font-size: 1rem;
-    }
-
-    .contact-info {
-      margin-top: 30px;
-    }
-
-    #thank-you-message {
-      display: none;
-      color: green;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-
-  <section> 
+  <section>
     <h2>Contáctanos</h2>
-
     <form id="contact-form" action="https://formspree.io/f/mnqekgyr" method="POST">
       <input type="text" name="nombre" placeholder="Nombre" required>
       <input type="email" name="email" placeholder="Correo electrónico" required>
@@ -184,34 +170,4 @@
   </footer>
 
   <script>
-    const form = document.getElementById('contact-form');
-    const thankYou = document.getElementById('thank-you-message');
-
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-
-        if (response.ok) {
-          form.reset();
-          thankYou.style.display = 'block';
-        } else {
-          alert('Hubo un error. Intenta de nuevo más tarde.');
-        }
-      } catch (error) {
-        alert('Error de conexión. Intenta nuevamente.');
-      }
-    });
-  </script>
-
-</body>
-</html>
+    const form = document.ge
